@@ -11,6 +11,14 @@ const apiport =8080;
 
 //user
 
+function myFunction() {
+  // Your code here
+  console.log("Function called every 14 minutes");
+}
+
+const interval = 14 * 60 * 1000;
+setInterval(myFunction, interval);
+
 app.post('/login', async (req, res) => {
     try {
         const result = await db.query("INSERT INTO login (teamname, status) VALUES ('"+req.body.teamname+"', 0)"); 
